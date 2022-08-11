@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:400,700|Quicksand:400,700");
+* {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: rgba(255, 255, 255, 1);
+  --blue: rgba(29, 144, 244, 1);
+  --font-family-comfortaa: "Comfortaa";
+  --font-family-quicksand: "Quicksand";
+  --font-size-50px: 50px;
+  --font-size-24px: 20px;
+  --font-size-16px: 16px;
+  --font-size-20px: 20px;
+  --font-size-10px: 10px;
+}
+
+.background {
+  background: url("../img/image 1.png") no-repeat center center fixed;
+  background-size: cover;
+  box-shadow: inset 1040px 4px 250px 30px #272323;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-family: var(--font-family-comfortaa);
+  font-size: var(--font-size-50px);
+}
+
+.spanSimil {
+  color: var(--white);
+}
+
+.spanAnime {
+  color: var(--blue);
+}
+
+.text {
+  font-family: var(--font-family-quicksand);
+  font-size: var(--font-size-24px);
+  font-weight: 400;
+  font-style: normal;
+}
+.text__text1 {
+  color: var(--white);
+}
+.text__text2 {
+  color: var(--blue);
+}
+.text__text3 {
+  color: var(--white);
+}
+
+#username {
+  border: none;
+  background-color: #333334;
+  border-radius: 10px;
+  font-family: var(--font-family-quicksand);
+  font-size: var(--font-size-16px);
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  padding: 1rem;
+  width: 300px;
+  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
+}
+
+#password {
+  border: none;
+  background-color: #333334;
+  border-radius: 10px;
+  font-family: var(--font-family-quicksand);
+  font-size: var(--font-size-16px);
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  padding: 1rem;
+  width: 300px;
+  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
+}
+
+.account {
+  font-family: var(--font-family-quicksand);
+  font-size: var(--font-size-16px);
+  font-weight: 400;
+  font-style: normal;
+}
+.account__text {
+  color: var(--white);
+}
+.account__text1 {
+  color: var(--blue);
+}
+
+#button_login {
+  background-color: var(--blue);
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 10px;
+  width: 130px;
+  margin-top: 30px;
+  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
+}
+
+.footer {
+  color: var(--white);
+  font-size: var(--font-size-10px);
+  font-family: var(--font-family-quicksand);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.paths {
+  fill: none;
+  stroke: #454754;
+  stroke-dasharray: 10;
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+.mask {
+  fill: none;
+  stroke: white;
+  stroke-width: 10;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 5s linear alternate infinite;
+          animation: dash 5s linear alternate infinite;
+}
+
+@-webkit-keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

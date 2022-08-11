@@ -1,0 +1,7 @@
+A primeira página é a de login.php. Caso não tenha o cadastro, aperte em sign up e cadastre um usuário com as informações necessárias, apenas o username e senha são obrigatórios. Após isso, volte para a página login.php e logue com sua conta (os dados do usuário após o cadastro serão salvos no mySQL na tabela users).
+Ao logar, você será redirecionado para a tela de cadastro de personagem, no qual colocará o nome de um personagem (exemplo: Naruto ou Hinata Hyuuga) e ao clicar em continuar, alguns dados do personagem já serão colocados automaticamente (são dados da API, mas ainda falta algumas informações para serem recuperadas). No personagem, apenas o nome é obrigatório.
+Clicando em cadastrar, o personagem será salvo no banco de dados na tabela characters.
+Para editar os dados de um usuário ou personagem, basta acessar a página passando como parâmetro na URL a PK (username ou name). Assim, os dados serão resgatados do banco de dados e colocados nos campos para que o usuário edite o que deseja.
+As páginas de deletar funcionam da mesma forma: para excluir algum personagem ou o próprio usuário, será necessário colocar o username diretamente na url (no caso do user) e no caso do personagem, colocar o nome (p. ex. delete-user.php?username=test).
+Portanto, é possível realizar o CRUD completo tanto dos usuários, quanto dos personagens.
+O próximo passo do projeto é trabalhar no cálculo da similaridade entre o personagem e o usuário, além de criar a página principal (homepage).
