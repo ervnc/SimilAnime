@@ -6,6 +6,20 @@
 	padding: 0;
 }
 
+:root {
+	--white: rgba(255, 255, 255, 1);
+	--blue: rgba(29, 144, 244, 1);
+	--purple: rgba(203, 119, 255, 1);
+	--font-family-comfortaa: "Comfortaa";
+	--font-family-quicksand: "Quicksand";
+	
+	--font-size-50px: 50px;
+	--font-size-24px: 20px;
+	--font-size-16px: 16px;
+	--font-size-20px: 20px;
+	--font-size-10px: 10px;
+}
+
 body {
     background-color: #222020;
 }
@@ -18,4 +32,41 @@ body {
 
 .ui.menu .item>img:not(.ui) {
 	width: 7.5em;
+}
+
+#nav {
+	color: #fff;
+	font-family: var(--font-family-quicksand);
+}
+
+.title {
+	color: #fff;
+	font-family: var(--font-family-quicksand);
+	line-height: 50px;
+	&__span {
+		color: var(--purple);
+	}
+}
+
+
+
+#cardCharacter {
+	background-color: lightgray;
+	padding: 20px;
+	border: none;
+	border-radius: 20px;
+	margin-bottom: 0;
+}
+
+.content {
+	font-family: var(--font-family-quicksand);
+}
+
+#content_header {
+	font-family: var(--font-family-quicksand);
+}
+
+#progress {
+	font-family: var(--font-family-quicksand);
+	color: #fff;
 }

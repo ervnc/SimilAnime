@@ -84,7 +84,7 @@
 						<div class="row" style="padding: 0;">
 							<div class="column center aligned account">
 								<span class="account__text">Don't have an account?</span>
-								<a href="../register-user.php"><span class="account__text1">Sign up</span></a>
+								<a href="../user/register-user.php"><span class="account__text1">Sign up</span></a>
 							</div>
 						</div>
 		

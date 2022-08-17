@@ -9,7 +9,7 @@
 			session_start();
 
 			if (!isset($_SESSION['username'])) {
-				header('Location: index.php');
+				header('Location: ../login/login.php');
 			}
 
 			include_once "../database.php";
