@@ -11,15 +11,15 @@
 			if (!isset($_SESSION['username'])) {
 				header('Location: ../login/login.php');
 			}
-
+			
 			include_once "../database.php";
-
+			
 			$username = $_GET["username"];
-	        $sql = "select * from users where username like '$username'";
-	        $result = mysqli_query($connection, $sql);
-	        while ($row = mysqli_fetch_assoc($result)) {
+			$sql = "select * from users where username like '$username'";
+			$result = mysqli_query($connection, $sql);
+			while ($row = mysqli_fetch_assoc($result)) {
 		?>
-    	<form action="update-user.php" method="POST">
+		<form action="update-user.php" method="POST">
 			<p>Username: <input type="text" name="username" maxlength="20" value="<?php echo $row["username"]?>" readonly required></p>
 			<p>Password: <input type="password" name="password" maxlength="30" required></p>
 			<p>Name: <input type="text" name="name" maxlength="40" onkeydown="return /[a-z]/i.test(event.key)" value="<?php echo $row["name"]?>"></p>

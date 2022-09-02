@@ -7,9 +7,6 @@
 
 		include_once "../database.php";
 
-
-		// verificar se o user existe
-		// verificar se a senha ta certa
 		$query = "select * from users where username = '$username'";
 		$result = mysqli_query($connection, $query);
 
