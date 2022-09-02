@@ -7,14 +7,12 @@
 	$blood_type = $_POST["blood-type"];
 	$gender = strtolower($_POST["gender"]);
 	$sexuality = strtolower($_POST["sexuality"]);
-	$birth_date = strtolower($_POST["birth-date"]);
+	$birthday = strtolower($_POST["birthday"]);
 	$zodiac_sign = $_POST["zodiac-sign"];
 	$mbti = $_POST["mbti"];
 	$occupation = strtolower(trim($_POST["occupation"]));
 
 	$sql = "update characters set ";
-
-	// $sql .= "name='$name', ";
 
 	if (empty($weight)) {
 		$sql .= "weight=NULL, ";
@@ -46,10 +44,10 @@
 		$sql .= "sexuality='$sexuality', ";
 	}
 
-	if (empty($birth_date)) {
-		$sql .= "birth_date=NULL, ";
+	if (empty($birthday)) {
+		$sql .= "birthday=NULL, ";
 	} else {
-		$sql .= "birth_date='$birth_date', ";
+		$sql .= "birthday='$birthday', ";
 	}
 	
 	if ($zodiac_sign == "-") {

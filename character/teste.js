@@ -36,12 +36,9 @@ const searchCharacter = async search => {
 
     const resultado = await fetch(`https://graphql.anilist.co`, options).then((res) => res.json());
 
-    //Get matches to current text input
     let matches = resultado.data.Page.characters.filter(result => {
-        // const regex = new RegExp(`^${search}`, 'gi');
         var personagem = Object.values(result);
-   
-        return personagem;    
+        return personagem;
     });
 
     if (search.length == 0) {
@@ -51,7 +48,6 @@ const searchCharacter = async search => {
 
     outputHtml(matches);
     console.log(matches);
-    //console.log(resultado);
 }
 
 function selectItem({ target }) {
@@ -66,18 +62,15 @@ function selectItem({ target }) {
 
 const outputHtml = matches => {
     if (matches.length > 0) {
-
         const html = matches.map(match => `
         <li class="nameAuto">
             <img class="ui avatar image" src="${match.image.large}" ></img>
             <span id="${match.id}" value="${match.name.userPreferred}" >${match.name.userPreferred}</span>
-        </li>`).join('');
-
+        </li>`)
+            .join('');
         match_list.innerHTML = html;
-
-            
-    } 
-}    
+    }
+}
 
 nomePersonagem.addEventListener('input', () => searchCharacter(nomePersonagem.value));
 match_list.addEventListener('click', selectItem);

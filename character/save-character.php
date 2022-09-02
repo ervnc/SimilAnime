@@ -7,15 +7,15 @@
 	$blood_type = $_POST["blood-type"];
 	$gender = $_POST["gender"];
 	$sexuality = $_POST["sexuality"];
-	$birth_date = $_POST["birth-date"];
+	$birthday = $_POST["birthday"];
 	$zodiac_sign = $_POST["zodiac-sign"];
 	$mbti = $_POST["mbti"];
 	$occupation = trim($_POST["occupation"]);
 	$user = $_POST["user"];
 
-	echo $user;
+	// echo $user;
 
-	$sql = "insert into characters(name, weight, height, blood_type, gender, sexuality, birth_date, zodiac_sign, mbti, occupation, user, similarity) values(";
+	$sql = "insert into characters(name, weight, height, blood_type, gender, sexuality, birthday, zodiac_sign, mbti, occupation, user, similarity) values(";
 
 	if (empty($name)) {
 		$sql .= "NULL, ";
@@ -53,10 +53,10 @@
 		$sql .= "'$sexuality', ";
 	}
 
-	if (empty($birth_date)) {
+	if (empty($birthday)) {
 		$sql .= "NULL, ";
 	} else {
-		$sql .= "'$birth_date', ";
+		$sql .= "'$birthday', ";
 	}
 	
 	if ($zodiac_sign == "-") {

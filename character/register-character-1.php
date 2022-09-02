@@ -2,25 +2,22 @@
 <html lang="en-us">
     <head>
         <meta charset="UTF-8">
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    	<link rel="stylesheet" href="character css/style.css">
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="character css/style.css">
         <?php
             $name = trim($_POST["name"]);
         ?>
         <title>Register character</title>
     </head>
     <body>
-        
         <div class="ui menu">
             <div class="item">
-                <a href="../main/mainPage.php"><img src="../img/logo_similanime.png"></a>
+                <a href="../main/mainPage.php">
+                    <img src="../img/logo_similanime.png">
+                </a>
             </div>
         </div>
-
         <div class="ui three column doubling stackable grid container">
             <div class="column center aligned">
                 <div class="ui special cards">
@@ -43,12 +40,9 @@
                     </div>
                 </div>
             </div>
-
-
             <form class="ui form" action="save-character.php" method="post">
                 <div class="column center aligned">
                     <input type="hidden" name="name" value="<?php echo $name ?>">
-
                     <div class="two fields">
                         <div class="field" style="margin-right: 30px;">
                             <label>MBTI</label>
@@ -73,7 +67,6 @@
                             </select>
                             <a href="https://www.personality-database.com/search?keyword=<?php echo $name?>">See your character's MBTI here</a>
                         </div>
-
                         <div class="field">
                             <label>Blood type</label>
                             <select class="ui selection dropdown" name="blood-type">
@@ -85,16 +78,14 @@
                             </select>
                         </div>
                     </div>
-                    
                     <div class="two fields" style="margin-top: 30px;">
                         <div class="field" style="margin-right: 30px;">
-                            <label>Birth date</label>
+                            <label>Birthday</label>
                             <div class="ui icon input">
-                                <input type="text" placeholder="yyyy/mm/dd" name="birth-date" id="birth-date">
+                                <input type="text" placeholder="yyyy/mm/dd" name="birthday" id="birthday">
                                 <i class="calendar alternate outline icon" style="color: #fff;"></i>
                             </div>
                         </div>
-
                         <div class="field">
                             <label>Weight</label>
                             <div class="ui input">
@@ -102,7 +93,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="two fields" style="margin-top: 30px;">
                         <div class="field" style="margin-right: 30px;">
                             <label>Gender</label>
@@ -113,28 +103,24 @@
                                 <option value="non-binary">Non-binary</option>
                             </select>
                         </div>
-
                         <div class="field">
                             <label>Height</label>
                             <div class="ui input">
                                 <input type="number" name="height" min="0" step="0.01" id="height">
                             </div>
                         </div>
-
                     </div>
-                    
                     <div class="two fields" style="margin-top: 30px;">
                         <div class="field" style="margin-right: 30px;">
                             <label>Sexuality</label>
-                             <select class="ui selection dropdown" name="sexuality">
+                            <select class="ui selection dropdown" name="sexuality">
                                 <option value="-">-</option>
                                 <option value="straight">Straight</option>
                                 <option value="gay">Gay</option>
                                 <option value="bi/pan">Bi/pan</option>
                                 <option value="asexual">Asexual</option>
-                             </select>
+                            </select>
                         </div>
-
                         <div class="field">
                             <label>Zodiac sign</label>
                             <select class="ui selection dropdown" name="zodiac-sign" id="zodiac">
@@ -154,15 +140,13 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="two fields" style="margin-top: 30px;">
                         <div class="field" style="margin-right: 30px;">
-                             <label>Occupation</label>
-                             <div class="ui input">
-                                 <input type="text" name="occupation" maxlength="30" id="occupation">
-                             </div>
+                            <label>Occupation</label>
+                            <div class="ui input">
+                                <input type="text" name="occupation" maxlength="30" id="occupation">
+                            </div>
                         </div>
-
                         <div class="field">
                             <input type="hidden" name="user" value="<?php echo $_POST['user']?>">
                             <button class="ui animated button large" tabindex="0" id="button_register">
@@ -172,29 +156,24 @@
                                 </div>
                             </button>
                         </div>
-                    </div>                
+                    </div>
                 </div>
             </form>
-
         </div>
-
-
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script>
             $(document).ready(function() {
                 api();
-
+            
                 $('.special.cards .image').dimmer({
                     on: 'hover'
                 });
-
-                $('.ui.selection.dropdown')
-                    .dropdown()
-                ;
+            
+                $('.ui.selection.dropdown').dropdown();
 
                 sessionStorage.clear();
             })
-
+            
             async function api() {
                 const name = document.querySelector("[name=name]");
                 var id = sessionStorage.getItem("id");
@@ -232,7 +211,7 @@
                         }
                     }
                 `;
-
+            
                 var options = {
                     method: 'POST',
                     headers: {
@@ -245,11 +224,11 @@
                 }
                 const resultado = await fetch(`https://graphql.anilist.co`, options).then((res) => res.json());
                 console.log(resultado);
-
+            
                 var nascimentoData = resultado.data.Character.dateOfBirth.day;
                 var nascimentoMes = resultado.data.Character.dateOfBirth.month;
-
-                document.querySelector("[name=birth-date]").value = nascimentoMes + "/" + nascimentoData;
+            
+                document.querySelector("[name=birthday]").value = nascimentoMes + "/" + nascimentoData;
                 document.querySelector("[name=blood-type]").value = resultado.data.Character.bloodType;
                 document.querySelector("[name=gender]").value = resultado.data.Character.gender;
                 var imagem = document.querySelector("[name=image]");
