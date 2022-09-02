@@ -77,7 +77,7 @@
 	include_once "../database.php";
 
 	if (mysqli_query($connection, $sql)) {
-		// header("Location: list-users.php");
+		// header("Location: ../main/mainPage.php");
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 	}

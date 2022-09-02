@@ -3,15 +3,44 @@
 	<head>
 		<title>Login</title>
 		<meta charset="UTF-8">
-
+		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     	<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.29/dist/sweetalert2.min.css">
+
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.29/dist/sweetalert2.min.js"></script>
 	</head>
 	<body>
 		<?php
 			session_start();
+
+			if (isset($_SESSION["logou"])) {
+				if (!$_SESSION["logou"]) {
+					if (!$_SESSION["toast"]) {
+
+						echo '<script type="text/javascript">',
+							"const Toast = Swal.mixin({
+								toast: true,
+								position: 'top-end',
+								showConfirmButton: false,
+								timer: 3000,
+								timerProgressBar: true,
+							  })
+							  
+							  Toast.fire({
+								icon: 'error',
+								title: 'Login failed'
+							  })",
+							'</script>'
+						;
+						
+						$_SESSION["toast"] = true;
+					}
+				}
+			}
 		?>
 		<div class="background">
 	
@@ -65,7 +94,7 @@
 							<div class="column center aligned">
 								<div class="ui icon input">
 									<input type="password" placeholder="Password" id="password" name="password" required>
-									<i class="eye icon" style="color: #fff;"></i>
+									<i class="eye slash outline icon" style="color: #fff;" onclick="mouseoverPass();"></i>
 								</div>
 							</div>
 						</div>
@@ -91,15 +120,28 @@
 		
 						<div class="row" style="margin-top: 80px;">
 							<div class="column center aligned footer">
-								<p>Feito por Evandro Risso e Laura Teixeira</p>
+								<p>Made by Evandro Risso & Laura Teixeira</p>
 							</div>
 						</div>
 						
 					</div>
 				</form>
 			</div>
+			<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+			<script>
+				function mouseoverPass() {
+					let password = document.querySelector('#password');
+					let eye = document.querySelector('.eye.icon');
+					if (password.getAttribute("type") === "password") {
+						password.setAttribute('type', 'text');
+						eye.setAttribute('class', 'eye icon');
+					} else {
+						password.setAttribute('type', 'password');
+						eye.setAttribute('class', 'eye slash outline icon');
+					}
+				}
+
+			</script>
 	</body>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </html>

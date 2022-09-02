@@ -17,7 +17,7 @@
 
 			<div class="ui menu">
 				<div class="item">
-					<img src="../img/logo_similanime.png">
+					<a href="../main/mainPage.php"><img src="../img/logo_similanime.png"></a>
 				</div>
 			</div>
 
@@ -70,9 +70,6 @@
 					</div>
 
 				</form>
-
-				
-			
 			</div>
 		</div>
 

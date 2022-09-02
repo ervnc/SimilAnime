@@ -79,7 +79,7 @@
 	include_once "../database.php";
 
 	if (mysqli_query($connection, $sql)) {
-		header("Location: register-user.php");
+		header("Location: ../login/login.php");
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 	}

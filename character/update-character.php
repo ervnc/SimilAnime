@@ -1,16 +1,16 @@
 <?php 
 	session_start();
 
-	$name = trim($_POST["name"]);
-	$weight = $_POST["weight"];
-	$height = $_POST["height"];
+	$name = strtolower(trim($_POST["name"]));
+	$weight = strtolower($_POST["weight"]);
+	$height = strtolower($_POST["height"]);
 	$blood_type = $_POST["blood-type"];
-	$gender = $_POST["gender"];
-	$sexuality = $_POST["sexuality"];
-	$birth_date = $_POST["birth-date"];
+	$gender = strtolower($_POST["gender"]);
+	$sexuality = strtolower($_POST["sexuality"]);
+	$birth_date = strtolower($_POST["birth-date"]);
 	$zodiac_sign = $_POST["zodiac-sign"];
 	$mbti = $_POST["mbti"];
-	$occupation = trim($_POST["occupation"]);
+	$occupation = strtolower(trim($_POST["occupation"]));
 
 	$sql = "update characters set ";
 
@@ -75,7 +75,7 @@
 	include_once "../database.php";
 
 	if (mysqli_query($connection, $sql)) {
-		// header("Location: list-characters.php");
+		header("Location: ../main/mainPage.php");
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 	}

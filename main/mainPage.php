@@ -164,7 +164,7 @@
                                         <input type="hidden" name="name" value="<?php echo $row["name"] ?>">
                                         <button class="ui button button_edit">Edit</button>
                                         <div class="or"></div>
-                                        <button class="ui button button_delete">Delete</button>
+                                        <a class="ui button button_delete">Delete</a>
                                     </div>
                                 </form>
                             </td>
@@ -175,13 +175,10 @@
                     </tbody>
                 </table>
 
-                <div class="ui basic test modal">
-                    <div class="header">Header</div>
-                    <div class="content">
-                        <p></p>
-                    </div>
+                <div class="ui mini modal">
+                    <div class="header">Are you sure you want to delete this character?</div>
                     <div class="actions">
-                        <div class="ui approve button">Approve</div>
+                        <div class="ui approve button">Delete</div>
                         <div class="ui cancel button">Cancel</div>
                     </div>
                 </div>
@@ -211,25 +208,23 @@
             })
         ;
 
-        $(".ui.button.button_edit").click(function(e){
-            e.preventDefault();
-            $('.ui.basic.test.modal')
-            .modal({
-                onDeny    : function(){
-                    window.alert('Wait not yet!');
-                    return false;
-                },
-                onApprove : function() {
-                    $(".ui.butotn.button_edit").unbind('click');
-                    $(".form_table").prop('action', '../character/edit-character.php');
-                    
-                }
-            }).modal('show');
-
+        $(".ui.button.button_edit").click(function(){
+            $(".form_table").prop('action', '../character/edit-character.php');
         });
 
         $(".ui.button.button_delete").click(function(){
-            $(".form_table").prop('action', '../character/delete-character.php');
+            $('.ui.mini.modal')
+            .modal({
+                onDeny : function(){
+                    return true;
+                },
+                onApprove : function() {
+                    $(".form_table").prop('action', '../character/delete-character.php');
+                    $(".form_table").submit();
+                }
+            })
+            .modal('show')
+            ;
         });
 
         

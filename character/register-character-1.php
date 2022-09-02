@@ -17,12 +17,12 @@
         
         <div class="ui menu">
             <div class="item">
-                <img src="../img/logo_similanime.png">
+                <a href="../main/mainPage.php"><img src="../img/logo_similanime.png"></a>
             </div>
         </div>
 
         <div class="ui three column doubling stackable grid container">
-            <div class="column">
+            <div class="column center aligned">
                 <div class="ui special cards">
                     <div class="card">
                         <div class="blurring dimmable image">
@@ -45,96 +45,136 @@
             </div>
 
 
-            <div class="column">
-                <form action="save-character.php" method="post">
+            <form class="ui form" action="save-character.php" method="post">
+                <div class="column center aligned">
                     <input type="hidden" name="name" value="<?php echo $name ?>">
 
-                    <div class="ui selection dropdown">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">MBTI</div>
-                        <div class="menu">
-                            <div class="item" data-value="">-</div>
-                            <div class="item" data-value="INTP">INTP</div>
-                            <div class="item" data-value="INTJ">INTJ</div>
-                            <div class="item" data-value="ENTJ">ENTJ</div>
-                            <div class="item" data-value="ENTP">ENTP</div>
-                            <div class="item" data-value="INFJ">INFJ</div>
-                            <div class="item" data-value="INFP">INFP</div>
-                            <div class="item" data-value="ENFJ">ENFJ</div>
-                            <div class="item" data-value="ENFP">ENFP</div>
-                            <div class="item" data-value="ISTJ">ISTJ</div>
-                            <div class="item" data-value="ISFJ">ISFJ</div>
-                            <div class="item" data-value="ESTJ">ESTJ</div>
-                            <div class="item" data-value="ESFJ">ESFJ</div>
-                            <div class="item" data-value="ISTP">ISTP</div>
-                            <div class="item" data-value="ISFP">ISFP</div>
-                            <div class="item" data-value="ESTP">ESTP</div>
-                            <div class="item" data-value="ESFP">ESFP</div>
+                    <div class="two fields">
+                        <div class="field" style="margin-right: 30px;">
+                            <label>MBTI</label>
+                            <select class="ui selection dropdown" name="mbti">
+                                <option value="-">-</option>
+                                <option value="INTP">INTP</option>
+                                <option value="INTJ">INTJ</option>
+                                <option value="ENTJ">ENTJ</option>
+                                <option value="ENTP">ENTP</option>
+                                <option value="INFJ">INFJ</option>
+                                <option value="INFP">INFP</option>
+                                <option value="ENFJ">ENFJ</option>
+                                <option value="ENFP">ENFP</option>
+                                <option value="ISTJ">ISTJ</option>
+                                <option value="ISFJ">ISFJ</option>
+                                <option value="ESTJ">ESTJ</option>
+                                <option value="ESFJ">ESFJ</option>
+                                <option value="ISTP">ISTP</option>
+                                <option value="ISFP">ISFP</option>
+                                <option value="ESTP">ESTP</option>
+                                <option value="ESFP">ESFP</option>
+                            </select>
+                            <a href="https://www.personality-database.com/search?keyword=<?php echo $name?>">See your character's MBTI here</a>
+                        </div>
+
+                        <div class="field">
+                            <label>Blood type</label>
+                            <select class="ui selection dropdown" name="blood-type">
+                                <option value="-">-</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="O">O</option>
+                                <option value="AB">AB</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="two fields" style="margin-top: 30px;">
+                        <div class="field" style="margin-right: 30px;">
+                            <label>Birth date</label>
+                            <div class="ui icon input">
+                                <input type="text" placeholder="yyyy/mm/dd" name="birth-date" id="birth-date">
+                                <i class="calendar alternate outline icon" style="color: #fff;"></i>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label>Weight</label>
+                            <div class="ui input">
+                                <input type="number" name="weight" min="0" step="0.1" id="weight">
+                            </div>
                         </div>
                     </div>
 
-                    <p>Birth date: <input type="text" placeholder="yyyy/mm/dd" name="birth-date"></p>
+                    <div class="two fields" style="margin-top: 30px;">
+                        <div class="field" style="margin-right: 30px;">
+                            <label>Gender</label>
+                            <select class="ui selection dropdown" name="gender">
+                                <option value="-">-</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="non-binary">Non-binary</option>
+                            </select>
+                        </div>
 
-                    <p>Gender:
-                        <select name="gender">
-                            <option>-</option>
-                            <option value="Male">male</option>
-                            <option value="Female">female</option>
-                            <option value="Non-binary">non-binary</option>
-                        </select>
-                    </p>
+                        <div class="field">
+                            <label>Height</label>
+                            <div class="ui input">
+                                <input type="number" name="height" min="0" step="0.01" id="height">
+                            </div>
+                        </div>
 
-                    <p>Sexuality:
-                        <select name="sexuality">
-                            <option>-</option>
-                            <option>straight</option>
-                            <option>gay</option>
-                            <option>bi/pan</option>
-                            <option>asexual</option>
-                        </select>
-                    </p>
+                    </div>
+                    
+                    <div class="two fields" style="margin-top: 30px;">
+                        <div class="field" style="margin-right: 30px;">
+                            <label>Sexuality</label>
+                             <select class="ui selection dropdown" name="sexuality">
+                                <option value="-">-</option>
+                                <option value="straight">Straight</option>
+                                <option value="gay">Gay</option>
+                                <option value="bi/pan">Bi/pan</option>
+                                <option value="asexual">Asexual</option>
+                             </select>
+                        </div>
 
-                    <p>Occupation: <input type="text" name="occupation" maxlength="30"></p>
-                
-            </div>
+                        <div class="field">
+                            <label>Zodiac sign</label>
+                            <select class="ui selection dropdown" name="zodiac-sign" id="zodiac">
+                                <option value="-">-</option>
+                                <option value="aries">Aries</option>
+                                <option value="taurus">Taurus</option>
+                                <option value="gemini">Gemini</option>
+                                <option value="cancer">Cancer</option>
+                                <option value="leo">Leo</option>
+                                <option value="virgo">Virgo</option>
+                                <option value="libra">Libra</option>
+                                <option value="scorpio">Scorpio</option>
+                                <option value="sagittarius">Sagittarius</option>
+                                <option value="capricorn">Capricorn</option>
+                                <option value="aquarius">Aquarius</option>
+                                <option value="pisces">Pisces</option>
+                            </select>
+                        </div>
+                    </div>
 
-            <div class="column">
-                    <p>Blood type:
-                        <select name="blood-type">
-                            <option>-</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="O">O</option>
-                            <option value="AB">AB</option>
-                        </select>
-                    </p>
+                    <div class="two fields" style="margin-top: 30px;">
+                        <div class="field" style="margin-right: 30px;">
+                             <label>Occupation</label>
+                             <div class="ui input">
+                                 <input type="text" name="occupation" maxlength="30" id="occupation">
+                             </div>
+                        </div>
 
-                    <p>Weight: <input type="number" name="weight" min="0" step="0.1"></p>
-
-                    <p>Height: <input type="number" name="height" min="0" step="0.01"></p>
-
-                    <p>Zodiac sign:
-                        <select name="zodiac-sign">
-                            <option>-</option>
-                            <option>aries</option>
-                            <option>taurus</option>
-                            <option>gemini</option>
-                            <option>cancer</option>
-                            <option>leo</option>
-                            <option>virgo</option>
-                            <option>libra</option>
-                            <option>scorpio</option>
-                            <option>sagittarius</option>
-                            <option>capricorn</option>
-                            <option>aquarius</option>
-                            <option>pisces</option>
-                        </select>
-                    </p>
-
-                    <input type="hidden" name="user" value="<?php echo $_POST['user']?>">
-                    <button class="button_register">Cadastrar</button>
-                </form>
-            </div>
+                        <div class="field">
+                            <input type="hidden" name="user" value="<?php echo $_POST['user']?>">
+                            <button class="ui animated button large" tabindex="0" id="button_register">
+                                <div class="visible content">Register</div>
+                                <div class="hidden content">
+                                    <i class="right arrow icon"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>                
+                </div>
+            </form>
 
         </div>
 
@@ -148,7 +188,7 @@
                     on: 'hover'
                 });
 
-                $('.ui.dropdown')
+                $('.ui.selection.dropdown')
                     .dropdown()
                 ;
 

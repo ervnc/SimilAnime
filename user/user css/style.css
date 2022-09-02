@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa:400,700|Quicksand:400,700");
+* {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --white: rgba(255, 255, 255, 1);
-  --blue: rgba(29, 144, 244, 1);
-  --orange: rgba(255, 168, 0, 1);
+  --green: rgba(23, 233, 170, 1);
   --font-family-comfortaa: "Comfortaa";
   --font-family-quicksand: "Quicksand";
   --font-size-40px: 40px;
@@ -12,15 +17,41 @@
   --font-size-10px: 10px;
 }
 
-* {
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-family-quicksand);
+.background {
+  background: url("../../img/user-registration.png") no-repeat center center fixed;
+  background-size: cover;
+  box-shadow: inset 1040px 4px 250px 30px #272323;
+  width: 100%;
+  height: 100%;
 }
 
-body {
-  background-color: #222020;
+.title {
+  font-family: var(--font-family-comfortaa);
+  font-size: var(--font-size-40px);
+}
+
+.spanUser {
+  color: var(--green);
+}
+
+.spanRegistration {
+  color: var(--white);
+}
+
+.text {
+  font-family: var(--font-family-quicksand);
+  font-size: var(--font-size-24px);
+  font-weight: 400;
+  font-style: normal;
+}
+.text__text1 {
+  color: var(--white);
+}
+.text__text2 {
+  color: var(--white);
+}
+.text__text3 {
+  color: var(--white);
 }
 
 .ui.menu {
@@ -33,60 +64,47 @@ body {
   width: 7.5em;
 }
 
-#birth-date {
+#username {
   border: none;
   background-color: #333334;
   border-radius: 10px;
+  font-family: var(--font-family-quicksand);
   font-size: var(--font-size-16px);
   font-weight: 400;
   font-style: normal;
   color: white;
   padding: 1rem;
-  width: 300px;
   filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
 }
 
-#occupation {
+#password {
   border: none;
   background-color: #333334;
   border-radius: 10px;
+  font-family: var(--font-family-quicksand);
   font-size: var(--font-size-16px);
   font-weight: 400;
   font-style: normal;
   color: white;
   padding: 1rem;
-  width: 300px;
   filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
 }
 
-#weight {
+#name {
   border: none;
   background-color: #333334;
   border-radius: 10px;
+  font-family: var(--font-family-quicksand);
   font-size: var(--font-size-16px);
   font-weight: 400;
   font-style: normal;
   color: white;
   padding: 1rem;
-  width: 300px;
   filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
 }
 
-#height {
-  border: none;
-  background-color: #333334;
-  border-radius: 10px;
-  font-size: var(--font-size-16px);
-  font-weight: 400;
-  font-style: normal;
-  color: white;
-  padding: 1rem;
-  width: 300px;
-  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
-}
-
-#button_register {
-  background-color: var(--orange);
+#button_next {
+  background-color: var(--green);
   color: var(--white);
   font-weight: 700;
   border-radius: 10px;
@@ -95,34 +113,13 @@ body {
   filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
 }
 
-.ui.selection.dropdown {
-  border: none;
-  background-color: #333334;
-  border-radius: 10px;
-  font-size: var(--font-size-16px);
-  font-weight: 400;
-  font-style: normal;
-  color: white;
-  padding: 1rem;
-  width: 300px;
-  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
-}
-
-.menu.transition.visible {
-  border: none;
-  background-color: #333334;
-  font-size: var(--font-size-16px);
-  font-weight: 400;
-  font-style: normal;
-  color: white;
-}
-
-.ui.selection.dropdown .menu > .item {
-  border: none;
-  color: white;
-}
-
 .ui.form .field > label {
-  color: white;
+  color: var(--white);
+  font-family: var(--font-family-quicksand);
   font-weight: 100;
+}
+
+.ui.icon.input > i.icon:not(.link) {
+  pointer-events: auto;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
